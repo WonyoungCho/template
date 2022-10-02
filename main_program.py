@@ -123,15 +123,9 @@ def cli_sub2(cmd_args):
     
     args = parser.parse_args(cmd_args)
 
-    start = datetime.now()
     run1_function(args.data_dir,
                   args.threads,
                   )
-    
-    finish = datetime.now()
-    print(f'\n\033[92mElapsed time : {finish - start}.\033[0m')
-    print(f'Started  at {start}. \nFinished at {finish}.\n')
-
 
 def run1_function(path,threads):
     print('\n* Function 1:',path, threads)
@@ -140,4 +134,10 @@ def run2_function(path,threads):
     print('\n* Function 2:',path, threads)
 
 def cli_app():
+    start = datetime.now()
+    
     main()
+    
+    finish = datetime.now()
+    print(f'\n\033[92mElapsed time : {finish - start}.\033[0m')
+    print(f'Started  at {start}. \nFinished at {finish}.\n')
